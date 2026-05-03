@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="15" alignment="CENTER" style="-fx-padding: 40; -fx-background-color: #f0f4f8;"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.bnr.mindcare.controllers.LoginController">
+
+    <Label text="MindCare" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: #1D9E75;"/>
+    <Label text="Youth Mental Health System" style="-fx-font-size: 14; -fx-text-fill: #666;"/>
+
+    <VBox spacing="10" style="-fx-padding: 20; -fx-background-color: white; -fx-background-radius: 10;">
+
+        <Label text="Email"/>
+        <TextField fx:id="emailField" promptText="Enter your email"/>
+
+        <Label text="Password"/>
+        <PasswordField fx:id="passwordField" promptText="Enter your password"/>
+
+        <Label text="Role"/>
+        <ComboBox fx:id="roleComboBox" promptText="Select role" maxWidth="Infinity"/>
+
+        <Button text="Login" onAction="#handleLogin" maxWidth="Infinity"
+                style="-fx-background-color: #1D9E75; -fx-text-fill: white; -fx-font-size: 14;"/>
+
+        <Button text="Register" onAction="#handleRegister" maxWidth="Infinity"
+                style="-fx-background-color: white; -fx-border-color: #1D9E75; -fx-text-fill: #1D9E75;"/>
+
+        <Label fx:id="messageLabel" style="-fx-text-fill: red;"/>
+
+    </VBox>
+</VBox>

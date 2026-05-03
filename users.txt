@@ -1,0 +1,5 @@
+Admin,Admin,admin@mindcare.com,admin123
+Patient,angemutoni@gmail.com,angemutoni@gmail.com,Mutoni12@
+Therapist,j.kagabo@mindcare.com,j.kagabo@mindcare.com,Kagabo12
+Therapist,j.kagabo@mindcare.com,j.kagabo@mindcare.com,Kagabo12
+Patient,kamanzibruno@gmail.com,kamanzibruno@gmail.com,Kamanzi12

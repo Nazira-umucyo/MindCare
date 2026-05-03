@@ -1,0 +1,3 @@
+Patient,angemutoni@gmail.com
+Therapist,j.kagabo@mindcare.com
+Patient,kamanzibruno@gmail.com

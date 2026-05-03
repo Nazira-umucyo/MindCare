@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.bnr.mindcare.controllers.AdminController"
+            style="-fx-background-color: #f0f4f8;">
+
+    <top>
+        <HBox style="-fx-background-color: #1D9E75; -fx-padding: 15;">
+            <Label text="MindCare — Admin Dashboard"
+                   style="-fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold;"/>
+        </HBox>
+    </top>
+
+    <left>
+        <VBox spacing="5" style="-fx-padding: 10; -fx-background-color: #085041;">
+            <Button text="Add Patient" onAction="#showAddPatient" maxWidth="Infinity"
+                    style="-fx-background-color: transparent; -fx-text-fill: white;"/>
+            <Button text="View Patients" onAction="#showPatients" maxWidth="Infinity"
+                    style="-fx-background-color: transparent; -fx-text-fill: white;"/>
+            <Button text="Add Therapist" onAction="#showAddTherapist" maxWidth="Infinity"
+                    style="-fx-background-color: transparent; -fx-text-fill: white;"/>
+            <Button text="View Therapists" onAction="#showTherapists" maxWidth="Infinity"
+                    style="-fx-background-color: transparent; -fx-text-fill: white;"/>
+            <Button text="Logout" onAction="#handleLogout" maxWidth="Infinity"
+                    style="-fx-background-color: transparent; -fx-text-fill: #ff6b6b;"/>
+        </VBox>
+    </left>
+
+    <center>
+        <StackPane fx:id="contentArea" style="-fx-padding: 20;">
+
+            <VBox fx:id="addPatientPane" spacing="10"
+                  style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10;">
+                <Label text="Add New Patient"
+                       style="-fx-font-size: 18; -fx-font-weight: bold;"/>
+                <TextField fx:id="patientName" promptText="Full name"/>
+                <TextField fx:id="patientAge" promptText="Age"/>
+                <TextField fx:id="patientEmail" promptText="Email"/>
+                <TextField fx:id="patientDiagnosis" promptText="Diagnosis"/>
+                <Button text="Add Patient" onAction="#handleAddPatient"
+                        style="-fx-background-color: #1D9E75; -fx-text-fill: white;"/>
+                <Label fx:id="patientMessage"/>
+            </VBox>
+
+            <VBox fx:id="patientsListPane" spacing="10" visible="false"
+                  style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10;">
+                <Label text="All Patients"
+                       style="-fx-font-size: 18; -fx-font-weight: bold;"/>
+                <HBox spacing="10">
+                    <TextField fx:id="searchPatientField" promptText="Search by name..." prefWidth="200"/>
+                    <Button text="Search" onAction="#handleSearchPatient"
+                            style="-fx-background-color: #1D9E75; -fx-text-fill: white;"/>
+                    <Button text="Sort A-Z" onAction="#handleSortPatients"
+                            style="-fx-background-color: #085041; -fx-text-fill: white;"/>
+                </HBox>
+                <TableView fx:id="patientsTable" prefHeight="300">
+                    <columns>
+                        <TableColumn fx:id="patientNameCol" text="Name" prefWidth="150"/>
+                        <TableColumn fx:id="patientEmailCol" text="Email" prefWidth="180"/>
+                        <TableColumn fx:id="patientAgeCol" text="Age" prefWidth="60"/>
+                        <TableColumn fx:id="patientDiagnosisCol" text="Diagnosis" prefWidth="150"/>
+                        <TableColumn fx:id="patientTherapistCol" text="Booked Therapist" prefWidth="150"/>
+                    </columns>
+                </TableView>
+                <Button text="Remove Selected" onAction="#handleRemovePatient"
+                        style="-fx-background-color: #ff6b6b; -fx-text-fill: white;"/>
+                <Label fx:id="patientsMessage"/>
+            </VBox>
+
+            <VBox fx:id="addTherapistPane" spacing="10" visible="false"
+                  style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10;">
+                <Label text="Add New Therapist"
+                       style="-fx-font-size: 18; -fx-font-weight: bold;"/>
+                <TextField fx:id="therapistName" promptText="Full name"/>
+                <TextField fx:id="therapistAge" promptText="Age"/>
+                <TextField fx:id="therapistEmail" promptText="Email"/>
+                <TextField fx:id="therapistSpecialty" promptText="Specialty"/>
+                <Button text="Add Therapist" onAction="#handleAddTherapist"
+                        style="-fx-background-color: #1D9E75; -fx-text-fill: white;"/>
+                <Label fx:id="therapistMessage"/>
+            </VBox>
+
+            <VBox fx:id="therapistsListPane" spacing="10" visible="false"
+                  style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10;">
+                <Label text="All Therapists"
+                       style="-fx-font-size: 18; -fx-font-weight: bold;"/>
+                <TableView fx:id="therapistsTable" prefHeight="300">
+                    <columns>
+                        <TableColumn fx:id="therapistNameCol" text="Name" prefWidth="150"/>
+                        <TableColumn fx:id="therapistEmailCol" text="Email" prefWidth="180"/>
+                        <TableColumn fx:id="therapistAgeCol" text="Age" prefWidth="60"/>
+                        <TableColumn fx:id="therapistSpecialtyCol" text="Specialty" prefWidth="150"/>
+                        <TableColumn fx:id="therapistAvailableCol" text="Available" prefWidth="80"/>
+                    </columns>
+                </TableView>
+                <Button text="Remove Selected" onAction="#handleRemoveTherapist"
+                        style="-fx-background-color: #ff6b6b; -fx-text-fill: white;"/>
+                <Label fx:id="therapistsMessage"/>
+            </VBox>
+
+        </StackPane>
+    </center>
+
+</BorderPane>

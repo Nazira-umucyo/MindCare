@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.bnr.mindcare.controllers.PatientController"
+            style="-fx-background-color: #f0f4f8;">
+
+    <top>
+        <HBox style="-fx-background-color: #1D9E75; -fx-padding: 15;">
+            <Label text="MindCare — Patient Dashboard"
+                   style="-fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold;"/>
+        </HBox>
+    </top>
+
+    <left>
+        <VBox spacing="5" style="-fx-padding: 10; -fx-background-color: #085041;">
+            <Button text="My Profile" onAction="#showProfile" maxWidth="Infinity"
+                    style="-fx-background-color: transparent; -fx-text-fill: white;"/>
+            <Button text="Book Therapist" onAction="#showBooking" maxWidth="Infinity"
+                    style="-fx-background-color: transparent; -fx-text-fill: white;"/>
+            <Button text="My History" onAction="#showHistory" maxWidth="Infinity"
+                    style="-fx-background-color: transparent; -fx-text-fill: white;"/>
+            <Button text="Logout" onAction="#handleLogout" maxWidth="Infinity"
+                    style="-fx-background-color: transparent; -fx-text-fill: #ff6b6b;"/>
+        </VBox>
+    </left>
+
+    <center>
+        <StackPane fx:id="contentArea" style="-fx-padding: 20;">
+
+            <VBox fx:id="profilePane" spacing="10"
+                  style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10;">
+                <Label text="My Profile"
+                       style="-fx-font-size: 18; -fx-font-weight: bold;"/>
+                <Label fx:id="profileName"/>
+                <Label fx:id="profileAge"/>
+                <Label fx:id="profileEmail"/>
+                <Label fx:id="profileDiagnosis"/>
+                <Label fx:id="profileTherapist"/>
+                <Label fx:id="profileAppointment"/>
+            </VBox>
+
+            <VBox fx:id="bookingPane" spacing="10" visible="false"
+                  style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10;">
+                <Label text="Book a Therapist"
+                       style="-fx-font-size: 18; -fx-font-weight: bold;"/>
+                <ListView fx:id="therapistsList"/>
+                <Button text="Book Selected Therapist" onAction="#handleBookTherapist"
+                        style="-fx-background-color: #1D9E75; -fx-text-fill: white;"/>
+                <Label fx:id="bookingMessage"/>
+            </VBox>
+
+            <VBox fx:id="historyPane" spacing="10" visible="false"
+                  style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10;">
+                <Label text="My Session History"
+                       style="-fx-font-size: 18; -fx-font-weight: bold;"/>
+                <Label fx:id="historyTherapist"/>
+                <Label fx:id="historyDate"/>
+                <Label fx:id="historyDiagnosis"/>
+            </VBox>
+
+        </StackPane>
+    </center>
+
+</BorderPane>
